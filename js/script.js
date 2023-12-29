@@ -87,9 +87,9 @@ function toggleDetail(detailId) {
 }
 
 const projects = [
-  { id: "project1", title: "Project 1", img: "pics/picture1.png", description: "Short description of Project 1"},
-  { id: "project2", title: "Project 2", img: "pics/picture2.png", description: "Short description of Project 2"},
-  { id: "project3", title: "Project 3", img: "pics/picture3.png", description: "Short description of Project 3"}
+  { id: "project1", title: "Project 1", img: "pics/picture1.jpg", description: "Short description of Project 1"},
+  { id: "project2", title: "Project 2", img: "pics/picture2.jpg", description: "Short description of Project 2"},
+  { id: "project3", title: "Project 3", img: "pics/picture3.jpg", description: "Short description of Project 3"}
 ];
 
 
