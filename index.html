@@ -1,77 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Electrical Services</title>
-<link rel="stylesheet" href="css/styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header>
-    <div class="container">
-      <h1>Reliable Electrical Services</h1>
-    </div>
-  </header>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Электротехнические услуги</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;500&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/jpg" sizes="32x32" href="pics/favicon.jpg">
+        <style>
 
-  <section id="hero" class="container">
-    <h2>Professional Electrical Solutions for Your Home and Business</h2>
-    <p>Our team of certified electricians is committed to delivering safe and reliable services.</p>
-  </section>
+        body, head {
+            font-family: 'JetBrains Mono', monospace;
+        }
 
-  <section id="about" class="container">
-    <h3>About Us</h3>
-    <img src="pics/team.jpg" alt="Our Team" id="teamPhoto">
-    <p>We have been providing top-notch electrical services for over a decade, ensuring that our customers' needs are met with professionalism and expertise.</p>
-  </section>
+        .container {
+            width: 80%;
+            margin: auto;
+            max-width: 1200px;
+        }
 
-  <section id="services" class="container">
-    <h3>Our Services</h3>
-    <div class="service-list">
-      <div class="service" onclick="toggleService('residentialDetail')">Residential Electrical Installations</div>
-      <div class="service" onclick="toggleService('commercialDetail')">Commercial Wiring and Repairs</div>
-      <div class="service" onclick="toggleService('emergencyDetail')">Emergency Wiring and Repairs</div>
-      <div class="service" onclick="toggleService('energyDetail')">Energy Wiring and Repairs</div>
-    </div>
-  </section>
+        /* Медиа-запросы для адаптивного дизайна */
+        @media only screen and (max-width: 600px) {
+            .container {
+                width: 95%;
+            }
 
-  <section id="service-details" class="container">
-    <div id="residentialDetail" class="service-detail">Details about residential installations...</div>
-    <div id="commercialDetail" class="service-detail">Details about commercial wiring and repairs...</div>
-    <div id="emergencyDetail" class="service-detail">Details about emergency wiring and repairs...</div>
-    <div id="energyDetail" class="service-detail">Details about energy wiring and repairs...</div>
-  </section>
+            header h1,
+            .section h2 {
+                font-size: 1.5em;
+            }
 
-  <section id="projects" class="container">
-    <h3>Completed Projects</h3>
-    <div id="carousel" class="carousel">
-      <div class="carousel-track">
-        <!-- Projects will be loaded here -->
-      </div>
-    </div>
-    <button class="carousel-button prev" onclick="moveCarousel(-1)">&#10094;</button>
-    <button class="carousel-button next" onclick="moveCarousel(1)">&#10095;</button>
-  </section>
+            /* Дополнительные стили для мобильных устройств */
+        }
 
-  <section id="contact" class="container">
-    <h3>Contact Us</h3>
-    <form id="contactForm">
-      <input type="text" id="name" class="input-field" placeholder="Your Name" required>
-      <input type="email" id="email" class="input-field" placeholder="Your Email" required>
-      <textarea id="message" class="input-field" placeholder="Your Message" required></textarea>
-      <button type="submit" class="submit-btn">Send Message</button>
-    </form>
-  </section>
+        @media only screen and (min-width: 601px) and (max-width: 1024px) {
+            .container {
+                width: 90%;
+            }
 
-  <footer>
-    <div class="container">
-      <h3>Contact Us</h3>
-      <p>Email: contact@yourelectricservice.com</p>
-      <p>Phone: (123) 456-7890</p>
-      <p>&copy; <span id="year"></span> Reliable Electrical Services</p>
-    </div>
-  </footer>
+            /* Дополнительные стили для планшетов */
+        }
 
-  <script src="js/script.js"></script>
-</body>
+        @media only screen and (min-width: 1025px) {
+            .container {
+                width: 85%;
+            }
+
+            /* Дополнительные стили для настольных ПК */
+        }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <h1>Надежные электротехнические услуги</h1>
+            </div>
+        </header>
+        <div class="flex-container">
+            <!-- Добавлен flex-контейнер -->
+            <section id="hero" class="container section">
+                <h2>Профессиональные электротехнические решения для вашего дома и бизнеса</h2>
+                <p>Наша команда сертифицированных электриков обязуется предоставлять безопасные и надежные услуги.</p>
+            </section>
+            <section id="about" class="container section">
+                <h3>О нас</h3>
+                <img src="pics/team.jpg" alt="Наша команда" id="teamPhoto">
+                <p>Более десяти лет мы предоставляем высококлассные электротехнические услуги, удовлетворяя потребности наших клиентов с профессионализмом и экспертизой.</p>
+            </section>
+            <section id="services" class="container section">
+                <h3>Наши услуги</h3>
+                <div class="service-list">
+                    <div class="service" onclick="toggleService('residentialDetail')">Установка домашних электросистем</div>
+                    <div class="service" onclick="toggleService('commercialDetail')">Коммерческие проводка и ремонт</div>
+                    <div class="service" onclick="toggleService('emergencyDetail')">Аварийная проводка и ремонт</div>
+                    <div class="service" onclick="toggleService('energyDetail')">Энергетическая проводка и ремонт</div>
+                </div>
+            </section>
+            <section id="service-details" class="container section">
+                <div id="residentialDetail" class="service-detail">
+                    <div class="service-image">
+                        <img src="pics/residential_Installations.jpg" alt="Установка домашних электросистем" id="residential-photo">
+                    </div>
+                    <p>Подробная информация об установке домашних электросистем...</p>
+                </div>
+                <div id="commercialDetail" class="service-detail">
+                    <p>Подробная информация о коммерческой проводке и ремонте...</p>
+                </div>
+                <div id="emergencyDetail" class="service-detail">
+                    <p>Подробная информация об аварийной проводке и ремонте...</p>
+                </div>
+                <div id="energyDetail" class="service-detail">
+                    <p>Подробная информация об энергетической проводке и ремонте...</p>
+                </div>
+            </section>
+            <section id="projects" class="container">
+                <h3>Завершенные проекты</h3>
+                <div id="carousel" class="carousel">
+                    <div class="carousel-track">
+                        <!-- Здесь будут загружены проекты --></div>
+                </div>
+                <button class="carousel-button prev" onclick="moveCarousel(-1)">&#10094;</button>
+                <button class="carousel-button next" onclick="moveCarousel(1)">&#10095;</button>
+            </section>
+            <section id="contact" class="container">
+                <h3>Свяжитесь с нами</h3>
+                <form id="contactForm">
+                    <input type="text" id="name" class="input-field" placeholder="Ваше имя" required>
+                    <input type="email" id="email" class="input-field" placeholder="Ваш Email" required>
+                    <textarea id="message" class="input-field" placeholder="Ваше сообщение" required></textarea>
+                    <button type="submit" class="submit-btn">Отправить сообщение</button>
+                </form>
+            </section>
+        </div>
+        <!-- Конец flex-контейнера -->
+        <footer>
+            <div class="container">
+                <h3>Свяжитесь с нами</h3>
+                <p>Email: contact@yourelectricservice.com</p>
+                <p>Телефон: (123) 456-7890</p>
+                <p>
+                    &copy;
+                    <span id="year"></span>
+                    Надежные электротехнические услуги
+                </p>
+            </div>
+        </footer>
+        <script src="js/script.js"></script>
+    </body>
 </html>

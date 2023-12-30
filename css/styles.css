@@ -3,44 +3,45 @@
 :root {
   --primary-color: #005a87;
   --secondary-color: #003c58;
-  --accent-color: #ff9800; /* Bold Accent */
-  --background-color: #f5f5f5;
+  --accent-color: #ff9800;
+  --background-color: #f9f9f9;
   --text-color: #333;
   --detail-background-color: #ffffff;
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
-  line-height: 1.6;
   margin: 0;
   padding: 0;
-  background: var(--background-color);
+  line-height: 1.6;
   color: var(--text-color);
+  background: var(--background-color);
 }
 
 .container {
   width: 80%;
-  margin: auto;
   max-width: 1200px;
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: var(--background-color)
 }
 
+/* Header Styles */
 header {
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-  color: #fff;
   padding: 20px 0;
   text-align: center;
+  color: #fff;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
 }
 
 header h1 {
   margin: 0;
-}
-
-h1, h2, h3 {
-  font-family: 'Roboto', sans-serif;
-}
-
-h1 {
   font-size: 2.5em;
+}
+
+h2,
+h3 {
+  color: #005a87;
 }
 
 h2 {
@@ -49,58 +50,59 @@ h2 {
 
 h3 {
   font-size: 1.5em;
+  text-align: center;
 }
 
+p {
+  margin-bottom: 20px;
+}
+
+header .container,
+#hero,
+footer .container {
+  background-color: transparent;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-image: url('../pics/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Section Styles */
 section {
   padding: 40px 0;
-}
-
-#about {
-  position: relative;
-  text-align: center; /* Center the content */
-  padding: 40px 20px;
-}
-
-#teamPhoto {
-  width: 100%; /* Responsive image size */
-  max-width: 800px; /* Maximum size of the image */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 10px; /* Soften the edges */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
-  margin-bottom: 20px; /* Space between the image and text */
+  width: 100%;
 }
 
 #hero {
-  background: #e9eff1;
   text-align: center;
-  border-bottom: 5px solid #005a87;
+  background: #e9eff1;
+  border-bottom: 5px solid var(--primary-color);
 }
 
-.service-list button {
-  background: var(--primary-color);
-}
-
-.service-list button, .submit-btn {
-  padding: 15px 20px;
-  border: none;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  border-radius: 5px;
-}
-
-.service-list button, .service-detail, .submit-btn {
+#about,
+#contact {
+  text-align: center;
+  background: var(--background-color);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.service-list button:hover {
-  transform: translateY(-2px);
+#teamPhoto {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.service-list button:hover, .submit-btn:hover {
-  background: var(--secondary-color);
-}
-
+/* Services Section */
 #services .service-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -108,65 +110,51 @@ section {
 }
 
 #services .service {
-  background: #fff;
   padding: 20px;
   text-align: center;
+  background: var(--background-color);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
 }
 
 #services .service:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+  background-color: var(--background-color);
 }
 
-footer {
-  background: #333;
-  color: #fff;
-  text-align: center;
-  padding: 20px 0;
-}
-
-h2, h3 {
-  color: #005a87;
-}
-
-p {
-  margin-bottom: 20px;
-}
-
-@media (max-width: 768px) {
-  .container,
-  .input-field,
-  .submit-btn {
-    width: 100%;
-  }
-}
-
-
-
-/* ... existing CSS ... */
-
-/* Contact Form Styles */
-#contact {
-  background: #f9f9f9;
-  border-radius: 8px;
-  padding: 30px;
+/* Button Styles */
+.service-list button,
+.submit-btn {
+  padding: 15px 20px;
+  border: none;
+  color: white;
+  background: var(--primary-color);
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service-list button:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+/* Input and Form Styles */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
 }
 
 textarea {
   min-height: 80px;
   resize: vertical;
-}
-
-.input-field {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  box-sizing: border-box; /* Ensures padding doesn't add to width */
-  transition: border-color 0.3s;
 }
 
 .submit-btn {
@@ -181,129 +169,34 @@ textarea {
 }
 
 .submit-btn:hover {
-  background: var(--accent-color);;
+  background: var(--accent-color);
 }
 
-/* ... existing CSS ... */
-
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-  border-radius: 5px;
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+/* Footer Styles */
+footer {
+  padding: 20px 0;
+  text-align: center;
+  color: var(--background-color);
+  background: #333;
 }
 
 /* Service Detail Styles */
 .service-detail {
-  max-height: 0; /* Prepare for transition */
-  width: 100%; /* Full width */
-  background: #f9f9f9;
-  background-color: var(--detail-background-color);
+  max-height: 0;
+  width: auto;
   padding: 0 20px;
+  background-color: var(--detail-background-color);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border-left: 4px solid #005a87;
   overflow: hidden;
+  border-radius: 10px;
   transition: max-height 0.5s ease-in-out, padding 0.3s ease-in-out;
 }
 
-.service {
-  /* ... existing styles ... */
-  cursor: pointer; /* Indicates the item is clickable */
-  transition: background-color 0.3s; /* Smooth background transition */
-}
-
-.service:hover {
-  background-color: #eef7fa; /* Light highlight on hover */
-}
-
-#projects {
-  padding: 40px 0;
-}
-
-.project-list {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 20px; /* Adjust as needed */
-}
-
-.project-container {
-  flex: 1;
-  min-width: 300px; /* Adjust based on your preference */
-}
-
-.project {
-  text-align: center;
-  cursor: pointer;
-}
-
-.project img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-  transition: transform 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.project h4, .project p {
-  margin: 10px 0;
-}
-
-.project-detail {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease, padding 0.3s ease;
-  background-color: var(--detail-background-color);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 0 20px;
-}
-
-.project img:hover {
-  transform: scale(1.03);
-}
-
-.project-detail.expanded {
-  padding: 20px;
-  max-height: 1000px; /* Adjust as needed */
-}
-
-
-
-
-/* Carousel Styles */
+/* Projects and Carousel Styles */
 #projects {
   position: relative;
   overflow: hidden;
   width: 100%;
-  padding: 40px 0;
 }
 
 .carousel {
@@ -319,13 +212,12 @@ textarea {
 }
 
 .project {
-  flex: 0 0 33.333%; /* Each project takes up 1/3 of the carousel */
-  transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transitions for appearance changes */
+  flex: 0 0 33.333%;
+  transition: transform 0.5s ease, opacity 0.5s ease;
   opacity: 0.6;
   filter: blur(2px);
 }
 
-/* Highlight the middle project */
 .project.active {
   transform: scale(1.5);
   opacity: 1;
@@ -333,7 +225,6 @@ textarea {
   z-index: 1;
 }
 
-/* Styling for when projects are moving in/out of view */
 .project.move-out {
   transform: scale(0.8);
   opacity: 0;
@@ -343,19 +234,19 @@ textarea {
   width: 100%;
   height: auto;
   border-radius: 5px;
-  transition: transform 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
 .project img:hover {
   transform: scale(1.03);
 }
 
-.project h4, .project p {
+.project h4,
+.project p {
   margin: 10px 0;
 }
 
-/* Carousel navigation buttons */
 .carousel-button {
   position: absolute;
   top: 50%;
@@ -378,20 +269,37 @@ textarea {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+
   .container,
+  .input-field,
+  .submit-btn {
+    width: 100%;
+  }
+
   .project {
-    width: 95%;
+    flex: 0 0 50%;
+  }
+
+  .project.active {
+    transform: scale(1.2);
   }
 
   h1 {
     font-size: 2em;
   }
+}
 
-  .project {
-    flex: 0 0 50%; /* Show only 2 projects at a time on smaller screens */
-  }
+/* Service Photos */
+.service-image {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+}
 
-  .project.active {
-    transform: scale(1.2); /* Smaller scale for smaller screens */
-  }
+.service-image img {
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
 }

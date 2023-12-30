@@ -1,18 +1,18 @@
 // script.js
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   // Display the current year in the footer
   document.getElementById('year').textContent = new Date().getFullYear();
 
   // Simple Contact Form Validation
   const form = document.getElementById('contactForm');
-  form.addEventListener('submit', function(event) {
+  form.addEventListener('submit', function (event) {
     event.preventDefault();
 
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
 
-    if(name && email && message) {
+    if (name && email && message) {
       // Implement sending form data to a server or email here
       alert('Thank you for your message!');
       form.reset(); // Reset the form values
@@ -22,33 +22,12 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-function openModal(serviceId) {
-  const modal = document.getElementById(serviceId);
-  if (modal) {
-    modal.style.display = "block";
-  }
-}
-
-function closeModal(serviceId) {
-  const modal = document.getElementById(serviceId);
-  if (modal) {
-    modal.style.display = "none";
-  }
-}
-
-// Close modal if the user clicks anywhere outside of it
-window.onclick = function(event) {
-  if (event.target.className === "modal") {
-    event.target.style.display = "none";
-  }
-}
-
 function toggleService(detailId) {
   var detail = document.getElementById(detailId);
   var allDetails = document.querySelectorAll('.service-detail');
 
   // Close all open details first
-  allDetails.forEach(function(item) {
+  allDetails.forEach(function (item) {
     if (item.id !== detailId) {
       item.style.maxHeight = null;
       item.style.padding = '0 20px';
@@ -64,32 +43,17 @@ function toggleService(detailId) {
     // Temporarily show to measure
     detail.style.maxHeight = '1000px'; // Temporarily set to a large value
     const actualHeight = detail.scrollHeight + 'px';
-    
+
     // Now set to actual needed height and allow transition to show this
     detail.style.maxHeight = actualHeight;
     detail.style.padding = '20px';
-  } 
-}
-
-function toggleDetail(detailId) {
-  var detail = document.getElementById(detailId);
-  var allDetails = document.querySelectorAll('.project-detail');
-
-  // Close all open details first
-  allDetails.forEach(function(item) {
-    if (item.id !== detailId) {
-      item.classList.remove('expanded');
-    }
-  });
-
-  // Toggle the clicked project's details
-  detail.classList.toggle('expanded');
+  }
 }
 
 const projects = [
-  { id: "project1", title: "Project 1", img: "pics/picture1.jpg", description: "Short description of Project 1"},
-  { id: "project2", title: "Project 2", img: "pics/picture2.jpg", description: "Short description of Project 2"},
-  { id: "project3", title: "Project 3", img: "pics/picture3.jpg", description: "Short description of Project 3"}
+  { id: "project1", title: "Проект 1", img: "pics/picture1.jpg", description: "Короткое описание проекта 1" },
+  { id: "project2", title: "Проект 2", img: "pics/picture2.jpg", description: "Короткое описание проекта 2" },
+  { id: "project3", title: "Проект 3", img: "pics/picture3.jpg", description: "Короткое описание проекта 3" }
 ];
 
 
@@ -138,7 +102,7 @@ function startAutoPlay() {
   // Change slide every 3 seconds (3000 milliseconds)
   autoPlayInterval = setInterval(() => {
     moveCarousel(1); // Move right
-  }, 3000);
+  }, 300000);
 }
 
 function stopAutoPlay() {
