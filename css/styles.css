@@ -7,6 +7,7 @@
   --background-color: #f9f9f9;
   --text-color: #333;
   --detail-background-color: #ffffff;
+  --details-transition: max-height 0.25s ease-in-out, padding 0.15s ease-in-out;
 }
 
 body {
@@ -28,7 +29,12 @@ body {
 
 /* Header Styles */
 header {
-  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 5px 0;
   text-align: center;
   color: #fff;
   background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
@@ -36,7 +42,7 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 2.5em;
+  font-size: 1.5em;
 }
 
 h2,
@@ -72,6 +78,7 @@ footer .container {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  padding-top: 48px;
 }
 
 /* Section Styles */
@@ -189,7 +196,7 @@ footer {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   border-radius: 10px;
-  transition: max-height 0.5s ease-in-out, padding 0.3s ease-in-out;
+  transition: var(--details-transition)
 }
 
 /* Projects and Carousel Styles */
@@ -302,4 +309,52 @@ footer {
   max-height: 100%;
   width: auto;
   max-width: 100%;
+}
+
+/* FAQ Section */
+.faq-container .faq-question h4 {
+  cursor: pointer;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.faq-container .faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: var(--details-transition);
+  padding: 0 10px;
+}
+
+.faq-container .faq-answer.open {
+  max-height: 500px;
+  padding: 10px;
+}
+
+/* Header menu */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-menu {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.header-menu li {
+  padding: 0 10px;
+}
+
+.header-menu a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.header-menu a:hover {
+  color: var(--accent-color);
+  background-color: var(--secondary-color)
 }

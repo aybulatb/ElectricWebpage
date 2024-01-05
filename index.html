@@ -6,7 +6,12 @@
         <title>Электротехнические услуги</title>
         <link rel="stylesheet" href="css/styles.css">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;500&display=swap" rel="stylesheet">
-        <link rel="icon" type="image/jpg" sizes="32x32" href="pics/favicon.jpg">
+        <link
+            rel="icon"
+            type="image/jpg"
+            sizes="32x32"
+            href="pics/favicon.jpg"
+        >
         <style>
 
         body, head {
@@ -51,11 +56,21 @@
         </style>
     </head>
     <body>
-        <header>
-            <div class="container">
-                <h1>Надежные электротехнические услуги</h1>
-            </div>
-        </header>
+      <header>
+        <div class="container header-container">
+            <h1>Надежные электротехнические услуги</h1>
+            <nav>
+                <ul class="header-menu">
+                    <li><a href="#hero">Главная</a></li>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#projects">Проекты</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
         <div class="flex-container">
             <!-- Добавлен flex-контейнер -->
             <section id="hero" class="container section">
@@ -102,12 +117,60 @@
                 <button class="carousel-button prev" onclick="moveCarousel(-1)">&#10094;</button>
                 <button class="carousel-button next" onclick="moveCarousel(1)">&#10095;</button>
             </section>
+            <section id="faq" class="container section">
+                <h3>Часто задаваемые вопросы</h3>
+                <div class="faq-container">
+                    <div class="faq-question">
+                        <h4 onclick="toggleAnswer('faq1')">Как работает ваша служба?</h4>
+                        <div id="faq1" class="faq-answer">
+                            <p>Ответ на вопрос о работе нашей службы... Ответ на вопрос о работе нашей службы... Ответ на вопрос о работе нашей службы... Ответ на вопрос о работе нашей службы... Ответ на вопрос о работе нашей службы... Ответ на вопрос о работе нашей службы...</p>
+                        </div>
+                    </div>
+                    <div class="faq-question">
+                        <h4 onclick="toggleAnswer('faq2')">Как с вами связаться?</h4>
+                        <div id="faq2" class="faq-answer">
+                            <p>Ответ на вопрос о том, как с нами связаться...</p>
+                        </div>
+                    </div>
+                    <div class="faq-question">
+                        <h4 onclick="toggleAnswer('faq3')">Как оплатить услуги?</h4>
+                        <div id="faq3" class="faq-answer">
+                            <p>Ответ на вопрос об оплате услуг...</p>
+                            <ul>
+                              <li>
+                                Сбербанк: 4545 0000 9000 6010
+                              </li>
+                              <li>
+                                Тинькоф: 9000 0000 9000 6010
+                              </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section id="contact" class="container">
                 <h3>Свяжитесь с нами</h3>
                 <form id="contactForm">
-                    <input type="text" id="name" class="input-field" placeholder="Ваше имя" required>
-                    <input type="email" id="email" class="input-field" placeholder="Ваш Email" required>
-                    <textarea id="message" class="input-field" placeholder="Ваше сообщение" required></textarea>
+                    <input
+                        type="text"
+                        id="name"
+                        class="input-field"
+                        placeholder="Ваше имя"
+                        required
+                    >
+                    <input
+                        type="email"
+                        id="email"
+                        class="input-field"
+                        placeholder="Ваш Email"
+                        required
+                    >
+                    <textarea
+                        id="message"
+                        class="input-field"
+                        placeholder="Ваше сообщение"
+                        required
+                    ></textarea>
                     <button type="submit" class="submit-btn">Отправить сообщение</button>
                 </form>
             </section>

@@ -34,20 +34,7 @@ function toggleService(detailId) {
     }
   });
 
-  // Toggle the clicked service's details
-  if (detail.style.maxHeight && detail.style.maxHeight !== '0px') {
-    // Hide if it's already shown
-    detail.style.maxHeight = null;
-    detail.style.padding = '0 20px';
-  } else {
-    // Temporarily show to measure
-    detail.style.maxHeight = '1000px'; // Temporarily set to a large value
-    const actualHeight = detail.scrollHeight + 'px';
-
-    // Now set to actual needed height and allow transition to show this
-    detail.style.maxHeight = actualHeight;
-    detail.style.padding = '20px';
-  }
+  applyTransition(detail);
 }
 
 const projects = [
@@ -117,3 +104,33 @@ startAutoPlay(); // Start the auto-play
 const carousel = document.getElementById('carousel');
 carousel.addEventListener('mouseenter', stopAutoPlay);
 carousel.addEventListener('mouseleave', startAutoPlay);
+
+// FAQ section
+function toggleAnswer(faqId) {
+  var answer = document.getElementById(faqId);
+
+  applyTransition(answer);
+}
+
+function applyTransition(htmlElement) {
+  if (htmlElement.style.maxHeight && htmlElement.style.maxHeight !== '0px') {
+    htmlElement.style.maxHeight = null;
+    htmlElement.style.padding = '0 20px';
+  } else {
+    htmlElement.style.maxHeight = '1000px';
+    const actualHeight = htmlElement.scrollHeight + 'px';
+
+    htmlElement.style.maxHeight = actualHeight;
+    htmlElement.style.padding = '20px';
+  }
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+      });
+  });
+});
